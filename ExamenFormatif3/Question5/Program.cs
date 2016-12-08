@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace Question5
 {
+    /// <summary>
+    /// CC : Commentaires?
+    /// CC : 12 / 15
+    /// </summary>
     class Program
     {
 
 
         static void Main(string[] args)
         {
-            string key = "popopopopopopopopopopopopopo";
+            string key = "popopopopopopopopopopopopopo"; // CC:  ???
             bool[] tableau = new bool[100];
             int nbVraiOuFaux;
             Random rnd = new Random();
@@ -22,16 +26,22 @@ namespace Question5
 
             for (int i = 0; i < 99; i++)
             {
-                nbVraiOuFaux = rnd.Next(1, 3);
-
+                nbVraiOuFaux = rnd.Next(1, 3);  // Préférable de générer 0 (faux) ou 1 (vrai)
                 if (nbVraiOuFaux == 1)
                 {
 
                     vraiOuFaux = true;
-                }else
+                }
+                else
                 {
+                                                // Ne pas mettre le else vide
+                }
+                {
+                                            
+                }                       
+                {                               
 
-                    vraiOuFaux = false;
+                    vraiOuFaux = false;         // Pourquoi c'est entre accolades ?
                 }
 
                 tableau[i] = vraiOuFaux;
@@ -49,15 +59,18 @@ namespace Question5
 
                 key = Console.ReadLine();
 
+                // CC : OK. Ajouter un commentaire qui explique ce que tu fais et surtout pourquoi.
                 if (tableau[positionPerso + 1] == false && tableau[positionPerso + 2] == false && tableau[positionPerso + 3] == false && tableau[positionPerso + 4] == false)
                 {
 
                     Console.WriteLine("Solution Impossible");
                     key = "q";
 
+                 
+    // Mettre l'accolade sur la ligne en dessous. Ça crée un bug majeur quand on fait tab après (fais-moi signe, faut que je te montre!!)
                 }else
                 {
-
+                    // Il aurait été plus judicieux d'utiliser un case pour les lettres
                     // Bouton A
 
                     if (key.ToLower() == "a" && positionPerso > 3 && tableau[positionPerso - 3] != false)
@@ -145,7 +158,7 @@ namespace Question5
 
                 }
 
-
+                // Trop d'espacement
 
 
                 // Bouton Y
@@ -175,6 +188,7 @@ namespace Question5
 
                 }
 
+                // Indentation
                 if ( key != "y" && key != "p" && key != "q")
                 {
                 tentative++;
